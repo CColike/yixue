@@ -1,0 +1,48 @@
+.head {
+    display: flex;
+}
+
+.picker{
+    width: 200rpx;
+    border-bottom: 1px solid gray;
+}
+
+.period {
+    /* width: 93.75rpx; */
+    /* height: 100%; */
+    display: flex;
+    /* flex: 93.75rpx; */
+    /* flex-shrink: 0; */
+    /* flex-grow:0; */
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.free_cell {
+    width: 40rpx;
+    height: 40rpx;
+    background-color: green;
+    /* visble: hidden; */
+}
+
+.occupied_cell {
+    width: 40rpx;
+    height: 40rpx;
+    background-color: red;
+    /* visble: hidden; */
+}
+
+.normal_cell {
+    width: 90rpx;
+    /* height: 40rpx; */
+    /* background-color: red; */
+    /* visble: hidden; */
+}
+
+.time_cell {
+    width: 120rpx;
+    /* height: 40rpx; */
+    /* background-color: red; */
+    /* visble: hidden; */
+}

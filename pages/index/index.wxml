@@ -1,0 +1,26 @@
+<!--pages/index/index.wxml-->
+<view>
+  <view class="head">
+    <picker bindchange="bindPickerChange" value="{{campus_index}}" range="{{campus}}">
+      <view class="picker">
+        {{campus[campus_index]}}
+      </view>
+    </picker>
+    <view>　　易学大厅预约情况概览</view>
+  </view>
+  <view class="timetable">
+    <view wx:for="{{timetable[campus[campus_index]]}}" wx:for-item="period">
+        <view class="period">
+            <view wx:for="{{period}}" wx:for-index="idx">
+                <view class="{{idx===0 ? time_cell : normal_cell}}">
+                  <view wx:if='{{item!="free" && item!="occupied"}}' style='text-align:center'>{{item}}</view>
+                  <view wx:else class="{{item==='free' ? 'free_cell' : 'occupied_cell'}}" style='text-align:center'></view>
+                </view>
+            </view>
+        </view>
+    </view>
+  </view>
+  <button>
+    我要预约
+  </button>
+</view>
