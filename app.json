@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/table/table",
     "pages/index/index"
   ],
   "window":{

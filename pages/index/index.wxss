@@ -1,48 +1,141 @@
-.head {
-    display: flex;
+/* pages/test/test.wxss */
+.pageTop{
+  /* width:100%; */
+  height: 140rpx;
+  background-color: #2E323B;
+  padding-left: 40rpx;
+  margin-top: -5rpx;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+}
+
+.DateBox{
+    width:100%;
+    height:137rpx;
+}
+
+.DateTab{
+    float: left;
+    margin-left:20rpx;
+    /* box-sizing: border-box;  */
+    /* background-color: #2E323B;
+    margin-top: -7rpx; */
+    position: relative;
+    /* padding-top: 20rpx; */
+    top:8rpx;
+}
+
+.DateTabBox{
+    width:80rpx;
+}
+
+.DateText{
+    left: 50rpx;
+    top: 170rpx;
+    width: 20rpx;
+    height: 12rpx;
+    line-height: 24rpx;
+    opacity: 0.5;
+    color: #787B81;
+    font-size: 10rpx;
+    text-align: center;
+    font-weight:400;
+    font-family: PingFangSC-Regular;
+    font-size: 20rpx;
+    /* margin-left: 10rpx; */
+}
+
+.active .DateText{
+    color: rgba(255,255,255,1);
+    font-family: CenturyGothic-Bold;
+    text-align: center;
+    font-size: 20rpx;
+}
+
+.active .DateTextDayBox{
+    margin-left:-10rpx;
+    /* top: 250rpx; */
+    width: 56rpx;
+    height: 56rpx;
+    background-color: #00AFD2;
+    border-radius: 50%;
+    padding: 5rpx;
+    font-size:32rpx;
+    font-family:CenturyGothic-Bold;
+    font-weight:bold;
+    color:#FFF;
+    line-height:36rpx;
+    text-align: center;
+    /* margin-top:2rpx; */
+}
+
+.DateTextDay{
+    width:100%;
+    height:60rpx;
+    display: block;  
+    /* opacity: 0.5; */
+    line-height: 60rpx;
+    flex-direction: column;
+    margin-right: 0rpx;
+    color: #96989D;
+    font-size: 32rpx;
+    text-align: left;
+    font-family: CenturyGothic-Bold;
+    font-weight:bold;
+}
+
+.active .DateTextDay{
+    color:#fff;
+    text-align: center;
+    /* margin-left: 2rpx; */
+}
+
+.noactive .DateTextDay{
+    opacity: 0.5; 
+    /* margin-left:0rpx; */
+}
+
+swiper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .picker{
-    width: 200rpx;
+    position: absolute;
+    margin-left: 80rpx;
+    top: 180rpx;
+    font-size: 50rpx;
+    font-family: "楷体";        /* "Microsoft Yahei" */
     border-bottom: 1px solid gray;
 }
+.mainContent{
+    position: absolute;
+    top: 250rpx;
+    height: 100%;
+    width: 100%;
+}
 
-.period {
-    /* width: 93.75rpx; */
-    /* height: 100%; */
+.periodItem{
+    margin-left: 80rpx;
+    margin-right: -20rpx;
+    margin-top: 30rpx;
+    margin-bottom: -15rpx;
+    width: 295rpx;
+    height: 80rpx;
     display: flex;
-    /* flex: 93.75rpx; */
-    /* flex-shrink: 0; */
-    /* flex-grow:0; */
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
+    position: relative;
+    float: left;
 }
 
-.free_cell {
-    width: 40rpx;
-    height: 40rpx;
-    background-color: green;
-    /* visble: hidden; */
+.checkboxGroup{
+    height: 800rpx;    
 }
 
-.occupied_cell {
-    width: 40rpx;
-    height: 40rpx;
-    background-color: red;
-    /* visble: hidden; */
-}
-
-.normal_cell {
-    width: 90rpx;
-    /* height: 40rpx; */
-    /* background-color: red; */
-    /* visble: hidden; */
-}
-
-.time_cell {
-    width: 120rpx;
-    /* height: 40rpx; */
-    /* background-color: red; */
-    /* visble: hidden; */
+.btn{
+    position: absolute;
+    top: 1050rpx;
+    width: 100%;
 }
