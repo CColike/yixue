@@ -1,0 +1,35 @@
+<!--pages/test/test.wxml-->
+<text>pages/test/test.wxml</text>
+<view class="TimeOrderBox scroll-view-item bc_red {{id == index ? 'coloBack':''}}" id="{{index}}" data-selectTime="{{item.month}}/{{item.day}}" data-week="{{item.week}}">
+  <view wx:for="{{dayList}}" wx:for-index="index" class="tab-item {{currentSwiper==index ?'active':'noactive'}}" wx:key="index" bindtap='changeTab' data-current="{{index}}">
+      <view class="TimesWD">
+        <text class="TimeOrderText" wx:if="{{NowDay==item.day}}">今天</text>
+        <text class="TimeOrderText" wx:else>周{{item.week}}</text>
+        <view class="TimeOrderDay">
+          <text class="TimeOrderTextDay">{{item.day}}</text>
+        </view>
+      </view>
+  </view>
+</view>
+
+<swiper circular="circular"  bindchange="switchSwiper" current="{{currentTab}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{dataShow}}" wx:key="index">
+    <swiper-item>
+      <view wx:if="{{dataShow[index].length>0}}">
+        <view wx:for="{{dataShow[index]}}" wx:for-item="key" wx:key="index">
+          <scroll-view scroll-y="{{true}}">
+          <view class="contentBody">
+              <text>
+              {{key.duration}} -我是第{{index}}条数据
+              </text>
+            </view>
+          <view class='heightView'></view>
+          </scroll-view>
+        </view>
+      </view>
+      <view wx:else><view class="contentBody"><text>暂无数据</text></view></view>
+    </swiper-item>
+  </block>
+</swiper>
+
+

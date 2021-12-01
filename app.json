@@ -1,12 +1,14 @@
 {
   "pages":[
+    "pages/table/table",
     "pages/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "易学大厅预约",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "disableScroll": true
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

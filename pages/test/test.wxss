@@ -1,0 +1,156 @@
+/* pages/test/test.wxss */
+/* 循环周天样式 Start */
+.tab-item{
+    float: left;
+    margin-left:20rpx;
+    box-sizing: border-box; 
+    /* background-color: #2E323B;
+    margin-top: -7rpx; */
+    position: relative;
+    /* padding-top: 20rpx; */
+    top:8rpx;
+  }
+  
+.pageTop{
+  /* width:100%; */
+  height: 140rpx;
+  background-color: #2E323B;
+  padding-left: 40rpx;
+  margin-top: -5rpx;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+}
+.TimeOrder{width:1036rpx;height:106rpx;border-top:1px solid #eee;border-bottom:1px solid #eee;overflow-x: auto;}
+/* .TimeOrderBox{width:148rpx;height:106rpx;border-right:1px solid #eee;text-align: center;line-height: 106rpx;} */
+
+.coloBack{color:#003a70;border-bottom:2px solid #003a70}
+.scroll-header{
+display: flex;
+white-space: nowrap;
+background:#fff;
+
+}
+.scroll-header .TimeOrderBox{
+height:120rpx;
+width:100rpx;
+/* border:1px solid #eee; */
+display: inline-block;
+/* font-size: 50rpx; */
+/* background:#fff; */
+}
+.TimeOrderText{
+left: 50rpx;
+top: 170rpx;
+width: 20rpx;
+height: 12rpx;
+line-height: 24rpx;
+opacity: 0.5;
+color: #787B81;
+font-size: 10px;
+text-align: center;
+font-weight:400;
+font-family: PingFangSC-Regular;
+font-size: 20rpx;
+/* margin-left: 10rpx; */
+}
+
+.TimeOrderTextDay{
+  width:100%;
+  height:60rpx;
+  display: block;  
+  /* opacity: 0.5; */
+  line-height: 60rpx;
+  flex-direction: column;
+  margin-right: 0rpx;
+  color: #96989D;
+  font-size: 32rpx;
+  text-align: left;
+  font-family: CenturyGothic-Bold;
+  font-weight:bold;
+}
+
+
+.TimeOrderBox{
+  width:100%;
+  height:137rpx;
+}
+.TimeOrderBoxCon{
+  width:100%;
+  height:127rpx;
+  border-bottom: 1rpx solid #000;
+}
+.TimeDayBox{
+  width:100%;
+  height:auto;
+}
+.TimeDayBoxCon{}
+.whatTime{width:175rpx;height:105rpx;font-size:26rpx;text-align: center;line-height: 105rpx;background:#fff;border-radius: 10rpx;margin-right:10rpx;margin-bottom:10rpx;color:#000;}
+.whatTime1{width:175rpx;height:105rpx;font-size:26rpx;text-align: center;line-height: 105rpx;background:#003a70 !important;border-radius: 10rpx;margin-right:10rpx;margin-bottom:10rpx;color:#fff;}
+.whatTime2{width:175rpx;height:105rpx;font-size:26rpx;text-align: center;line-height: 105rpx;background:#fdfdfd;border-radius: 10rpx;margin-right:10rpx;margin-bottom:10rpx;color:#dbdbdb;}
+/* 选中时缩小字体 */
+.narrowFontSize{
+    font-size: 22rpx;
+}
+.selectTimeLeft{padding-left:12rpx;}
+.SelectTimeBtn{width:100%;height:98rpx;line-height: 98rpx;text-align: center;color:#fff;position: fixed;bottom:0;background:#003a70;}
+.SelectTimeBtnBox{width:100%;height:98rpx;background:#fff;}
+.nowTime{
+    background-color: #e4e4e4 ;
+}
+.TimesWD{
+  width:80rpx;
+
+}
+.active .TimeOrderDay{
+  margin-left:-10rpx;
+  /* top: 250rpx; */
+  width: 56rpx;
+  height: 56rpx;
+  background-color: #00AFD2;
+  border-radius: 50%;
+  padding: 5rpx;
+  font-size:32rpx;
+  font-family:CenturyGothic-Bold;
+  font-weight:bold;
+  color:#FFF;
+  line-height:36rpx;
+  text-align: center;
+  /* margin-top:2rpx; */
+}
+.active   .TimeOrderTextDay{
+  color:#fff;
+  text-align: center;
+  /* margin-left: 2rpx; */
+}
+.active  .TimeOrderText{
+  color: rgba(255,255,255,1);
+  font-family: CenturyGothic-Bold;
+  text-align: center;
+  font-size: 20rpx;
+  
+
+}
+.noactive .TimeOrderTextDay{
+  opacity: 0.5; 
+  /* margin-left:0rpx; */
+}
+
+
+swiper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+scroll-view{
+  height: 100%;
+  overflow: scroll;
+  background-color:#252830;
+}
+swiper-item{
+  overflow: scroll;
+}
+
+
+/*循环周天样式  End*/
