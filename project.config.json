@@ -51,6 +51,8 @@
     "servePath": ""
   },
   "isGameTourist": false,
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "cloudfunctionRoot": "cloudfunctions/",
   "condition": {
     "search": {
       "list": []
