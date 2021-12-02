@@ -76,7 +76,12 @@ Page({
   },
   bindPickerChange: function (e) {
     // console.log('picker发送选择改变，携带值为', e.detail.value)
+    var obj = this.data.checked;
+    for(var i in obj){
+      obj[i] = false;
+    }
     this.setData({
+      checked: obj,
       campus_index: e.detail.value
     })
     this.inquireData();
@@ -89,8 +94,11 @@ Page({
     // console.log(e);
   },
   checkboxChange: function (e) {
-    var obj = this.data.checked;
     // console.log(e.detail.value);
+    var obj = this.data.checked;
+    for(var i in obj){
+      obj[i] = false;
+    }
     for(var i=0;i<e.detail.value.length;++i){
       obj[e.detail.value[i]] = true;
     }

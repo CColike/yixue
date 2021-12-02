@@ -3,7 +3,7 @@
     {
       "name": "updateData",
       "type": "timer",
-      "config": "0 0 21 * * 3 *"
+      "config": "0 0 0 * * 5 *"
     }
   ]
 }
