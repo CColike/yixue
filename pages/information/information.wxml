@@ -1,0 +1,26 @@
+<view>
+  请确认您的申请时间并填写相关信息
+  <view>
+    {{campus}}
+  </view>
+  
+  <view>
+    {{date}}
+  </view>
+
+  <view wx:for="{{period}}" wx:for-index="key" wx:for-item="value">
+    <view wx:if="{{value==true}}">
+      {{key}}
+    </view>
+  </view>
+</view>
+
+<view>
+  <input class="input" placeholder="借用人" bindinput="person" />
+  <input class="input" placeholder="借用单位" bindinput="unit" />
+  <input class="input" placeholder="联系电话" bindinput="call" />
+</view>
+<view class="btn">
+  <button type="primary" bindtap="clickBtn">我要预约</button>
+</view>
+

@@ -1,0 +1,7 @@
+/* pages/campus_choice/campus_choice.wxss */
+.flex-center-in-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 40px;
+}

@@ -13,13 +13,10 @@
   </view>
 </view>
 
-<view>
-  <picker bindchange="bindPickerChange" value="{{campus_index}}" range="{{campus}}">
-    <view class="picker">
-      {{campus[campus_index]}}
-    </view>
-  </picker>
+<view class="campus_format">
+  {{campus[campus_index]}}
 </view>
+
 
 <view class="mainContent">
 <swiper current="{{currentSwiper}}" circular="{{circular}}" bindchange="switchSwiper">

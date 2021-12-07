@@ -1,6 +1,8 @@
 {
   "pages":[
-    "pages/index/index"
+    "pages/campus_choice/campus_choice",
+    "pages/index/index",
+    "pages/information/information"
   ],
   "window":{
     "backgroundTextStyle":"light",

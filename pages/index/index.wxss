@@ -103,14 +103,6 @@ swiper {
     width: 100%;
 }
 
-.picker{
-    position: absolute;
-    margin-left: 80rpx;
-    top: 180rpx;
-    font-size: 50rpx;
-    font-family: "楷体";        /* "Microsoft Yahei" */
-    border-bottom: 1px solid gray;
-}
 .mainContent{
     position: absolute;
     top: 250rpx;
@@ -139,3 +131,20 @@ swiper {
     top: 1050rpx;
     width: 100%;
 }
+
+.campus_format{
+    position: absolute;
+    margin-left: 80rpx;
+    top: 180rpx;
+    font-size: 50rpx;
+    font-family: "楷体";    
+}
+
+/* .picker{
+    position: absolute;
+    margin-left: 80rpx;
+    top: 180rpx;
+    font-size: 50rpx;
+    font-family: "楷体";       
+    border-bottom: 1px solid gray;
+} */

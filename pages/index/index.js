@@ -6,7 +6,6 @@ Page({
     timeTable: {},
     campus: ['天赐庄校区', '独墅湖校区', '阳澄湖校区'],
     campus_name: ['tcz','dsh','ych'],
-    campus_index: 0
   },
   onLoad: function (options) {
     // head部分 星期&日期信息
@@ -35,9 +34,10 @@ Page({
     this.setData({
       dateList: dateList,
       period: period,
-      checked: checked
+      checked: checked,
+      campus_index: options.index
     });    
-    console.log(checked);
+    // console.log(checked);
     
     this.inquireData();
   },
@@ -89,9 +89,15 @@ Page({
   clickBtn: function (e) {
     // this.data.dateList[this.data.currentSwiper]['date']: 要预约的日期 
     // checked: 当前日期的复选框选中情况
-    console.log(this.data.dateList[this.data.currentSwiper]['date']);
-    console.log(this.data.checked);
+    // console.log(this.data.dateList[this.data.currentSwiper]['date']);
+    // console.log(this.data.checked);
     // console.log(e);
+    var date=JSON.stringify(this.data.dateList[this.data.currentSwiper]['date']);
+    var checked=JSON.stringify(this.data.checked);
+    var campus_choosen=this.data.campus[this.data.campus_index];
+    wx.navigateTo({
+      url:'/pages/information/information?date='+date+'&period='+checked+'&campus='+campus_choosen
+    });
   },
   checkboxChange: function (e) {
     // console.log(e.detail.value);
