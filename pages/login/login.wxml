@@ -1,0 +1,24 @@
+<!--pages/login/login.wxml-->
+<view>
+    <view>
+        姓名
+        <input class="input" bindinput="getName"></input>
+    </view>
+    <view>
+        身份
+        <picker bindchange="bindPickerChange" value="{{identity_index}}" range="{{identity_array}}">
+            <view class="picker">
+                {{identity_array[identity_index]}}
+            </view>
+        </picker>
+    </view>
+    <view>
+        学/工号
+        <input class="input" bindinput="getId"></input>
+    </view>
+    <view>
+        联系方式
+        <input class="input" bindinput="getPhone"></input>
+    </view>
+    <button bindtap="confirmInfo" type="primary">确定</button>
+</view>

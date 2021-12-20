@@ -11,6 +11,9 @@ Page({
         data: {
           "12:30-13:00":1
       }})
+  },  
+  onShow: function () {
+    wx.hideHomeButton()
   },
   choice_0: function (){
     wx.navigateTo({

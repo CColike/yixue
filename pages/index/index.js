@@ -43,9 +43,9 @@ Page({
   },
   inquireData: function () {
     // 获取数据库"timeTable"未来7天各时段的预约情况
-    wx.cloud.init({
-      env: wx.cloud.DYNAMIC_CURRENT_ENV
-    });
+    // wx.cloud.init({
+    //   env: wx.cloud.DYNAMIC_CURRENT_ENV
+    // });
     const db = wx.cloud.database();
     for(var i=0;i<this.data.dateList.length;++i){
       var date = this.data.dateList[i].date;

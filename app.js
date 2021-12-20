@@ -1,17 +1,30 @@
 // app.js
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    wx.cloud.init({
+      env: wx.cloud.DYNAMIC_CURRENT_ENV
+    });
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
+    const db = wx.cloud.database();
+    db.collection('user').where({
+      type: 'info'
     })
+    .get({
+      success: function(res) {
+        if(res.data.length == 0){
+          console.log("获取数据失败", res)
+          // wx.switchTab({
+          //   url: '/pages/login/login'
+          // }) 
+        }
+        else{
+          console.log("获取数据成功",res)
+          wx.switchTab({
+            url: '/pages/campus_choice/campus_choice'
+          })
+        }
+      }
+    })   
   },
   globalData: {
     userInfo: null

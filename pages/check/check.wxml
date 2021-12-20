@@ -1,0 +1,19 @@
+<!--pages/check/check.wxml-->
+<view wx:for="{{data}}" wx:for-item="data_item">
+    <view>
+    校区: {{campus[data_item['campus_name']]}}
+    </view>
+    <view>预约日期: {{data_item['date']}}</view>
+    <view>预约时间: 
+        <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
+            <view wx:if="{{value==true}}">
+                {{key}}
+            </view>
+        </view>
+    </view>
+    <view>审核状态: 
+        <view wx:if="{{data_item['status']==0}}">审核中</view>
+        <view wx:elif="{{data_item['status']==1}}">审核通过</view>
+        <view wx:else="{{data_item['status']==2}}">未通过审核</view>
+    </view>
+</view>

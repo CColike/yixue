@@ -1,0 +1,44 @@
+
+<view class="view-contain-ti">
+    <text class="text-ti">用户类型</text>
+    <text>　　{{user}}</text>
+</view>
+<view class="view-contain-ti">
+    <text class="text-ti">姓名</text>
+    <text>　　{{name}}</text>
+</view>
+<view class="view-contain-ti">
+    <text class="text-ti">身份</text>
+    <text>　　{{identify}}</text>
+</view>
+<view class="view-contain-ti">
+     <text class="text-ti">学/工号</text>
+    <text>　　{{id}}</text>
+</view>
+<view class="view-contain-ti">
+     <text class="text-ti">联系方式</text>
+    <text>　　{{phone}}</text>
+</view>
+
+<text>\n\n\n</text>
+
+<view wx:for="{{data}}" wx:for-item="data_item" wx:for-index="index">
+    <view>
+    校区: {{campus[data_item['campus_name']]}}
+    </view>
+    <view>预约日期: {{data_item['date']}}</view>
+    <view>预约时间: 
+        <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
+            <view wx:if="{{value==true}}">
+                {{key}}
+            </view>
+        </view>
+    </view>
+    <view>审核状态: 
+        <view wx:if="{{data_item['status']==0}}">审核中</view>
+        <view wx:elif="{{data_item['status']==1}}">审核通过</view>
+        <view wx:else="{{data_item['status']==2}}">未通过审核</view>
+    </view>
+        <button type="primary" bindtap="clickBtn_agree" id="{{index}}" size="mini">同意</button>
+        <button type="warn" bindtap="clickBtn_refuse" id="{{index}}" size="mini">拒绝</button>
+</view>

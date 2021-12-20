@@ -20,18 +20,18 @@ exports.main = async (event, context) => {
   // 让世界时表示的是GMT+8，后面就要用getUTCDate
   var mydate = convertUTCDateToLocalDate(new Date());
   console.log(mydate);
-  console.log(mydate.getDate());
+  // console.log(mydate.getDate());
   console.log(mydate.getUTCDate());
 
   // console.log(process.env);
   // 删除数据
   console.log('--------before remove data----------');
   var lastday = convertUTCDateToLocalDate(new Date());
-  // lastday.setDate(lastday.getDate()-1);
+  lastday.setDate(lastday.getDate()-1);
   var lastdate = lastday.getFullYear()+'-'+String(lastday.getMonth()+1)+'-'+(lastday.getUTCDate()<10 ? '0'+lastday.getUTCDate() : lastday.getUTCDate());
   console.log(lastday);
-  console.log(lastdate);
-  console.log(lastday.getDate());
+  // console.log(lastdate);
+  // console.log(lastday.getDate());
   console.log(lastday.getUTCDate());
   for(var k=0;k<database.length;++k){
     // await db.collection(database[k]).where({
@@ -42,7 +42,12 @@ exports.main = async (event, context) => {
   console.log('--------after remove data----------');
   // 更新数据
   var next7day = convertUTCDateToLocalDate(new Date());
+  console.log(next7day);
+  console.log(next7day.getUTCDate());
   next7day.setDate(next7day.getDate()+7);
+  console.log(next7day);
+  console.log(next7day.getUTCDate());
+
   var next7date = next7day.getFullYear()+'-'+String(next7day.getMonth()+1)+'-'+(next7day.getUTCDate()<10 ? '0'+next7day.getUTCDate() : next7day.getUTCDate());
   // for(var i=0;i<7;++i){
   //   if(i>0) mydate.setDate(mydate.getDate()+1);
@@ -59,11 +64,11 @@ exports.main = async (event, context) => {
     data[period[j]] = 0;
   }
   console.log('--------before update data----------');
-  console.log(next7day);
-  console.log(next7date);
-  console.log(next7day.getDate());
-  console.log(lastday.getUTCDate());
-  console.log(data);
+  // console.log(next7day);
+  // console.log(next7date);
+  // console.log(next7day.getDate());
+  // console.log(lastday.getUTCDate());
+  // console.log(data);
   console.log('--------before update data----------');
   for(var k=0;k<database.length;++k){
     data['_id'] = next7date;

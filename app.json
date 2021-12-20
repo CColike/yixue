@@ -1,8 +1,11 @@
 {
   "pages":[
+    "pages/login/login",
     "pages/campus_choice/campus_choice",
     "pages/index/index",
-    "pages/information/information"
+    "pages/information/information",
+    "pages/check/check",
+    "pages/userinfo/userinfo"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -10,6 +13,28 @@
     "navigationBarTitleText": "易学大厅预约",
     "navigationBarTextStyle":"black",
     "disableScroll": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/campus_choice/campus_choice",
+        "text":"申请",
+        "iconPath": "icon/home.png",
+        "selectedIconPath": "icon/home1.png"
+      },
+      {
+        "pagePath": "pages/check/check",
+        "text": "审核",
+        "iconPath": "icon/check.png",
+        "selectedIconPath": "icon/check1.png"
+      },
+      {
+        "pagePath": "pages/userinfo/userinfo",
+        "text": "我的",
+        "iconPath": "icon/userinfo.png",
+        "selectedIconPath": "icon/userinfo1.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
