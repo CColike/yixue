@@ -1,13 +1,13 @@
 <!--pages/campus_choice/campus_choice.wxml-->
 <text>\n\n\n</text>
 
-<view class="flex-center-in-row">请选择你需要预约的校区</view>
+<view class="flex-center-in-row">请选择您要预约的校区</view>
 
 <text>\n</text>
-<button bindtap="choice_0">天赐庄</button>
+<button bindtap="choice_0" class="but-class">天赐庄</button>
 <text>\n</text>
-<button bindtap="choice_1">独墅湖</button>
+<button bindtap="choice_1" class="but-class">独墅湖</button>
 <text>\n</text>
-<button bindtap="choice_2">阳澄湖</button>
+<button bindtap="choice_2"class="but-class">阳澄湖</button>
 
 
