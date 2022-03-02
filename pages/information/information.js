@@ -62,6 +62,7 @@ Page({
     var campus_index = {'天赐庄校区': 'tcz', '独墅湖校区': 'dsh', '阳澄湖校区': 'ych'};
     var campus_name = campus_index[this.data.campus];
     var date = this.data.date;
+    var unit = this.data.unit;
     var period = JSON.stringify(this.data.period);
     var that = this;
     const db = wx.cloud.database();
@@ -84,6 +85,7 @@ Page({
             date: date,
             period: period,
             user_info: user_info,
+            unit:unit,
             status: 0, // 0: 提交待审核 1: 审核通过 2: 审核拒绝
             // time: time // 申请时间日志 
           },

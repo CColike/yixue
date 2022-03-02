@@ -12,7 +12,7 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "易学大厅预约",
     "navigationBarTextStyle":"black",
-    "disableScroll": true
+    "disableScroll": false
   },
   "tabBar": {
     "list": [

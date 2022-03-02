@@ -66,10 +66,11 @@ Page({
             var t = res.data;
             for(var i=0;i<t.length;++i){
               t[i]['period'] = JSON.parse(t[i]['period']);
+              t[i]['user_info'] = JSON.parse(t[i]['user_info']);
             }
-            console.log(t)
+            //console.log(t)
             t.sort(function(a,b){return a.date.localeCompare(b.date);});
-            console.log(t)
+            //console.log(t)
             that.setData({
               data: t
             });
@@ -93,6 +94,7 @@ Page({
             var tt = res.result;
             for(var i=0;i<tt.length;++i){
               tt[i]['period'] = JSON.parse(tt[i]['period']);
+              tt[i]['user_info'] = JSON.parse(tt[i]['user_info']);
             }
             console.log(tt);
             tt.sort(function(a,b){return a.date.localeCompare(b.date);});

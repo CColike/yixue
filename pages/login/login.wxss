@@ -18,4 +18,5 @@
   .input1 {
     margin:  auto 10px;
     margin: auto;
+    text-align: center;
   }

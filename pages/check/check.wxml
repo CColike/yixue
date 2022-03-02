@@ -19,15 +19,17 @@
                         </view>
                         <view>　预约时间: 
                             <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
-                                <view wx:if="{{value==true}}">
-                                    　　　　　　{{key}}
+                                <view wx:if="{{value==true}}"class="t0">{{key}}
                                 </view>
                             </view>
                         </view>
                         <view>　审核状态: 
-                            <view wx:if="{{data_item['status']==0}}"class="t1">审核中</view>
-                            <view wx:elif="{{data_item['status']==1}}"class="t2">审核通过</view>
-                            <view wx:else="{{data_item['status']==2}}"class="t3">未通过审核</view>
+                            <view wx:if="{{data_item['status']==0}}"class="t1">审核中
+                            </view>
+                            <view wx:elif="{{data_item['status']==1}}"class="t2">审核通过
+                            </view>
+                            <view wx:else="{{data_item['status']==2}}"class="t3">未通过审核
+                            </view>
                         </view>
                         <view class="divLine"></view>
                     </view>
@@ -48,9 +50,32 @@
                         </view>
                         <view>　预约时间: 
                             <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
-                                <view wx:if="{{value==true}}">
-                                    　　　　　　{{key}}
+                                <view wx:if="{{value==true}}"class="t0">
+                                    {{key}}
                                 </view>
+                            </view>
+                        </view>
+                        <view>　预约人:
+                            <view class="t0">
+                                {{data_item['user_info']['name']}}
+                            </view>
+                        </view>
+                        <view>　学号:
+                            <view class="t0">
+                                {{data_item['user_info']['id']}}
+                            </view>
+                        </view>
+                        <view>　借用单位:
+                            <view wx:if="{{data_item['unit']}}"class="t0">
+                                {{data_item['unit']}}
+                            </view>
+                            <view wx:else class="t0">
+                                申请人未填写
+                            </view>
+                        </view>
+                        <view>　电话:
+                            <view class="t0">
+                                {{data_item['user_info']['phone']}}
                             </view>
                         </view>
                         <view>　审核状态: 
@@ -58,15 +83,17 @@
                             <view wx:elif="{{data_item['status']==1}}"class="t2">审核通过</view>
                             <view wx:else="{{data_item['status']==2}}"class="t3">未通过审核</view>
                         </view>
-                        <button type="primary" bindtap="clickBtn_agree" id="{{index}}" size="mini">同意</button>
+                        　　　　　　　　　　　　<button type="primary" bindtap="clickBtn_agree" id="{{index}}" size="mini">同意</button>
                         <button type="warn" bindtap="clickBtn_refuse" id="{{index}}" size="mini">拒绝</button>
                         <view class="divLine"></view>
                     </view>
+                    <text>\n\n\n\n</text>
                 </scroll-view>      
-                
-            </swiper-item>              
+            </swiper-item>             
         </swiper>
+        
     </view>
+
 </view>
 
 <view wx:else>
@@ -82,17 +109,19 @@
             </view>
             <view>　预约时间: 
                 <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
-                    <view wx:if="{{value==true}}">
-                        　　　　　　{{key}}
+                    <view wx:if="{{value==true}}"class="t0">{{key}}
                     </view>
                 </view>
             </view>
             <view>　审核状态: 
-                <view wx:if="{{data_item['status']==0}}"class="t1">审核中</view>
-                <view wx:elif="{{data_item['status']==1}}"class="t2">审核通过</view>
-                <view wx:else="{{data_item['status']==2}}"class="t3">未通过审核</view>
+                <view wx:if="{{data_item['status']==0}}"class="t1">审核中
+                </view>
+                <view wx:elif="{{data_item['status']==1}}"class="t2">审核通过
+                </view>
+                <view wx:else="{{data_item['status']==2}}"class="t3">未通过审核
+                </view>
             </view>
-            <view class="divLine"></view>
         </view>
     </scroll-view>
 </view>
+
