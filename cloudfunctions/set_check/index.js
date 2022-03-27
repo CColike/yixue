@@ -1,3 +1,5 @@
+// 只有管理员会调用，设置check的status审批同意与否
+
 const cloud = require('wx-server-sdk')
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV

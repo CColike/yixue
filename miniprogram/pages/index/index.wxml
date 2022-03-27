@@ -1,0 +1,38 @@
+<view class="pageTop">
+  <view class="DateBox">
+    <view wx:for="{{dateList}}" wx:for-index="idx" class="DateTab" wx:key="idx">
+      <view class="DateTabBox {{currentSwiper==idx ?'active':'noactive'}}" bindtap='changeTab' data-current="{{idx}}">
+        <text class="DateText" wx:if="{{idx==0}}">今天</text>
+        <text class="DateText" wx:else>周{{item.week}}</text>
+        <view class="DateTextDayBox">
+          <text class="DateTextDay">{{item.day}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="campus_format">
+  {{campus[campus_index]}}
+</view>
+
+<view class="mainContent">
+  <swiper current="{{currentSwiper}}" circular="{{circular}}" bindchange="switchSwiper">
+    <block wx:for="{{dateList}}" wx:for-item="day" wx:for-index="idx" wx:key="idx">
+      <swiper-item> 
+        <checkbox-group class="checkboxGroup" bindchange="checkboxChange">
+          <label wx:for="{{period}}" class="periodItem">
+            <view>
+              <checkbox disabled="{{(timeTable[day['date']][item]==1 ? true : false)}}" checked="{{checked[item]}}" value="{{item}}"/>
+            </view>
+            <view>{{item}}</view>
+          </label>
+        </checkbox-group>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="btn">
+  <button type="primary" bindtap="clickBtn">确认预约</button>
+</view>
