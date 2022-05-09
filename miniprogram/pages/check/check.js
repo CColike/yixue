@@ -8,6 +8,8 @@ Page({
   onShow: function() {
     var that = this;
     const db = wx.cloud.database();
+    var mydate = new Date();
+    var today = mydate.getFullYear()+'-'+String(mydate.getMonth()+1)+'-'+(mydate.getDate()<10 ? '0'+mydate.getDate() : mydate.getDate());
     db.collection('user').where({
       type: 'info'
     })
@@ -26,9 +28,15 @@ Page({
                 t[i]['period'] = JSON.parse(t[i]['period']);
                 t[i]['user_info'] = JSON.parse(t[i]['user_info']);
               }
-              t.sort(function(a,b){return a.date.localeCompare(b.date);});
+              t.sort(function(a,b){return b.date.localeCompare(a.date);});
+              var t_ = [];
+              for(var i=0;i<t.length;++i){
+                if(t[i].date.localeCompare(today)>=0) t_.push(t[i]);
+                else break;
+              }
+              t_.reverse();
               that.setData({
-                data: t
+                data: t_
               });
             }
           }
@@ -51,9 +59,16 @@ Page({
                 tt[i]['period'] = JSON.parse(tt[i]['period']);
                 tt[i]['user_info'] = JSON.parse(tt[i]['user_info']);
               }
-              tt.sort(function(a,b){return a.date.localeCompare(b.date);});
+              tt.sort(function(a,b){return b.date.localeCompare(a.date);});
+
+              var tt_ = [];
+              for(var i=0;i<tt.length;++i){
+                if(tt[i].date.localeCompare(today)>=0) tt_.push(tt[i]);
+                else break;
+              }
+              tt_.reverse();
               that.setData({
-                data2: tt
+                data2: tt_
               });
             }
           })
