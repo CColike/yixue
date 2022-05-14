@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "npm": "^8.10.0",
+    "weui-miniprogram": "^1.2.3"
+  }
+}

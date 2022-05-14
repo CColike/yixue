@@ -8,30 +8,29 @@
             <swiper-item>
                 <scroll-view scroll-y="true" style="height: 1200rpx;">
                     <view wx:for="{{data}}" wx:for-item="data_item" wx:key="">
-                        <view class="view-contain-ti">
-                            <text class="text-ti">校区</text>
-                            <view class="input1">{{campus[data_item['campus_name']]}}</view>
-                        </view>
-                        <view class="view-contain-ti">
-                            <text class="text-ti">预约日期</text>
-                            <view class="input1">{{data_item['date']}}</view>
-                        </view>
-                        <view>　预约时间: 
+                        
+
+                        <mp-cells ext-class="my-cells" title="您的申请">
+                            <mp-cell value="校区" footer="{{campus[data_item['campus_name']]}}"></mp-cell>
+                            <mp-cell value="预约日期" footer="{{data_item['date']}}"></mp-cell>
+                            <mp-cell value="预约时间" ></mp-cell>
                             <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
-                                <view wx:if="{{value==true}}"class="t0">{{key}}
+                                <view wx:if="{{value==true}}">
+                                    <mp-cell  footer="{{key}}"></mp-cell>
                                 </view>
                             </view>
-                        </view>
-                        <view>　审核状态: 
-                            <view wx:if="{{data_item['status']==0}}"class="t1">审核中
+                            <view wx:if="{{data_item['status']==0}}">
+                                <mp-cell value="审核状态" footer="审核中"></mp-cell>
                             </view>
-                            <view wx:elif="{{data_item['status']==1}}"class="t2">审核通过
+                            <view wx:if="{{data_item['status']==1}}">
+                                <mp-cell value="审核状态" footer="审核通过"></mp-cell>
                             </view>
-                            <view wx:else="{{data_item['status']==2}}"class="t3">未通过审核
+                            <view wx:if="{{data_item['status']==2}}">
+                                <mp-cell value="审核状态" footer="审核未通过"></mp-cell>
                             </view>
-                        </view>
-                        <view class="divLine"></view>
+                        </mp-cells>
                     </view>
+                    
                 </scroll-view>      
                 
             </swiper-item>
@@ -39,85 +38,76 @@
             <swiper-item>
                 <scroll-view scroll-y="true" style="height: 1200rpx;">
                     <view wx:for="{{data2}}" wx:for-item="data_item" wx:for-index="index">
-                        <view class="view-contain-ti">
-                            <text class="text-ti">校区</text>
-                            <view class="input1">{{campus[data_item['campus_name']]}}</view>
-                        </view>
-                        <view class="view-contain-ti">
-                            <text class="text-ti">预约日期</text>
-                            <view class="input1">{{data_item['date']}}</view>
-                        </view>
-                        <view>　预约时间: 
+                        <mp-cells ext-class="my-cells" title="新申请">
+                            <mp-cell value="校区" footer="{{campus[data_item['campus_name']]}}"></mp-cell>
+                            <mp-cell value="预约日期" footer="{{data_item['date']}}"></mp-cell>
+                            <mp-cell value="预约时间"></mp-cell>
                             <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
                                 <view wx:if="{{value==true}}"class="t0">
-                                    {{key}}
+                                    <mp-cell footer="{{key}}"></mp-cell>
                                 </view>
                             </view>
-                        </view>
-                        <view>　预约人:
-                            <view class="t0">
-                                {{data_item['user_info']['name']}}
+                            <mp-cell value="预约人" footer="{{data_item['user_info']['name']}}"></mp-cell>
+                            <mp-cell value="学号" footer="{{data_item['user_info']['id']}}"></mp-cell>
+                            <view wx:if="{{data_item['unit']}}">
+                                <mp-cell value="借用单位" footer="{{data_item['unit']}}"></mp-cell>
                             </view>
-                        </view>
-                        <view>　学号:
-                            <view class="t0">
-                                {{data_item['user_info']['id']}}
+                            <view wx:else>
+                                <mp-cell value="借用单位" footer="申请人未填写"></mp-cell>
                             </view>
-                        </view>
-                        <view>　借用单位:
-                            <view wx:if="{{data_item['unit']}}"class="t0">
-                                {{data_item['unit']}}
+                            <mp-cell value="电话" footer="{{data_item['user_info']['phone']}}"></mp-cell>
+                            <view wx:if="{{data_item['status']==0}}">
+                                <mp-cell value="审核状态" footer="审核中"></mp-cell>
                             </view>
-                            <view wx:else class="t0">
-                                申请人未填写
+                            <view wx:elif="{{data_item['status']==1}}">
+                                <mp-cell value="审核状态" footer="审核通过"></mp-cell>
                             </view>
-                        </view>
-                        <view>　电话:
-                            <view class="t0">
-                                {{data_item['user_info']['phone']}}
+                            <view wx:else="{{data_item['status']==2}}">
+                                <mp-cell value="审核状态" footer="未通过审核"></mp-cell>
                             </view>
-                        </view>
-                        <view>　审核状态: 
-                            <view wx:if="{{data_item['status']==0}}"class="t1">审核中</view>
-                            <view wx:elif="{{data_item['status']==1}}"class="t2">审核通过</view>
-                            <view wx:else="{{data_item['status']==2}}"class="t3">未通过审核</view>
-                        </view>
-                        　　　　　　　　　　　　<button type="primary" bindtap="clickBtn_agree" id="{{index}}" size="mini">同意</button>
-                        <button type="warn" bindtap="clickBtn_refuse" id="{{index}}" size="mini">拒绝</button>
-                        <view class="divLine"></view>
+                        </mp-cells>
+                        
+                    <button type="primary" bindtap="clickBtn_agree" id="{{index}}" size="large">同意</button>
+                    <button type="warn" bindtap="clickBtn_refuse" id="{{index}}" size="large">拒绝</button>
+                      
                     </view>
                     <text>\n\n\n\n</text>
+                    
                 </scroll-view>      
-            </swiper-item>             
+            </swiper-item>      
+                   
         </swiper>
+        
     </view>
+    
 </view>
 <view wx:else>
     <scroll-view scroll-y="true" style="height: 1200rpx;">
         <view wx:for="{{data}}" wx:for-item="data_item">
-            <view class="view-contain-ti">
-                <text class="text-ti">校区</text>
-                <view class="input1">{{campus[data_item['campus_name']]}}</view>
-            </view>
-            <view class="view-contain-ti">
-                <text class="text-ti">预约日期</text>
-                <view class="input1">{{data_item['date']}}</view>
-            </view>
-            <view>　预约时间: 
-                <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
-                    <view wx:if="{{value==true}}"class="t0">{{key}}
-                    </view>
-                </view>
-            </view>
-            <view>　审核状态: 
-                <view wx:if="{{data_item['status']==0}}"class="t1">审核中
-                </view>
-                <view wx:elif="{{data_item['status']==1}}"class="t2">审核通过
-                </view>
-                <view wx:else="{{data_item['status']==2}}"class="t3">未通过审核
-                </view>
-            </view>
+            
+            <mp-cells ext-class="my-cells" title="您的申请">
+                            <mp-cell value="校区" footer="{{campus[data_item['campus_name']]}}"></mp-cell>
+                            <mp-cell value="预约日期" footer="{{data_item['date']}}"></mp-cell>
+                            <mp-cell value="预约时间" ></mp-cell>
+                            <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
+                                <view wx:if="{{value==true}}">
+                                    <mp-cell  footer="{{key}}"></mp-cell>
+                                </view>
+                            </view>
+                            <view wx:if="{{data_item['status']==0}}">
+                                <mp-cell value="审核状态" footer="审核中"></mp-cell>
+                            </view>
+                            <view wx:if="{{data_item['status']==1}}">
+                                <mp-cell value="审核状态" footer="审核通过"></mp-cell>
+                            </view>
+                            <view wx:if="{{data_item['status']==2}}">
+                                <mp-cell value="审核状态" footer="审核未通过"></mp-cell>
+                            </view>
+                        </mp-cells>
+            
+            
         </view>
     </scroll-view>
+    
 </view>
 
