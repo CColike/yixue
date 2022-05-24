@@ -17,7 +17,7 @@
   display: flex;
   height: 40px;
   margin: 20px;
-  border: 3rpx solid #faca82;
+  border: 3rpx solid rgba(7,193,96);
   border-radius: 10rpx;
 }
 
@@ -44,6 +44,7 @@
   margin: -10px 0 0 10px;
   padding: 0 5px;
   color: rgb(0, 0, 0);
+  background-color: rgba(237,237,237);
 }
 
 .input1 {

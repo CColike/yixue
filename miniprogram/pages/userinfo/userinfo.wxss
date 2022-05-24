@@ -12,6 +12,7 @@
   margin: -10px 0 0 10px;
   padding: 0 5px;
   color: rgb(0, 0, 0);
+  background-color: rgba(237,237,237);
 }
 .input1 {
   margin:  auto 10px;
