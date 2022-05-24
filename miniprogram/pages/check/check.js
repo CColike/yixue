@@ -16,9 +16,9 @@ Page({
     .get({
       success: function(res) {
         var d = res.data[0];
-        var user_info = JSON.stringify(d);
+        var openid = d["_openid"];
         db.collection('check').where({
-          user_info: user_info
+          _openid: openid
         })
         .get({
           success: function(res) {
@@ -26,7 +26,6 @@ Page({
             if(t.length != 0){
               for(var i=0;i<t.length;++i){
                 t[i]['period'] = JSON.parse(t[i]['period']);
-                t[i]['user_info'] = JSON.parse(t[i]['user_info']);
               }
               t.sort(function(a,b){return b.date.localeCompare(a.date);});
               var t_ = [];
@@ -49,7 +48,7 @@ Page({
           wx.cloud.callFunction({
             name: 'geter',
             data: {
-              user_info: user_info
+              _openid: openid
             },
           })
           .then(res => {
@@ -57,7 +56,7 @@ Page({
             if(tt.length != 0){
               for(var i=0;i<tt.length;++i){
                 tt[i]['period'] = JSON.parse(tt[i]['period']);
-                tt[i]['user_info'] = JSON.parse(tt[i]['user_info']);
+                tt[i]['user_info'] = tt[i]['user_info'];
               }
               tt.sort(function(a,b){return b.date.localeCompare(a.date);});
 

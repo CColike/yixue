@@ -8,8 +8,6 @@ const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  var user_info = JSON.parse(event.user_info);
-  console.log(user_info);
   var data;
   await db.collection('check').get().then(res => {
     console.log(res.data);
