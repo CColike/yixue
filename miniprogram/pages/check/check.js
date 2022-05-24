@@ -4,6 +4,15 @@ Page({
     campus: {'tcz': '天赐庄校区', 'dsh': '独墅湖校区', 'ych': '阳澄湖校区'},
     isAdministor: false,
     currentSwiper: 0,
+    height:500,
+  },
+  onLoad: function () {
+    this.setData({
+      height: wx.getSystemInfoSync().windowHeight-56+'px',
+      height2:wx.getSystemInfoSync().windowHeight+'px',
+    })
+    
+ 
   },
   onShow: function() {
     var that = this;
