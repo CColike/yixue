@@ -2,7 +2,7 @@
 .tab.noactive {
   float: left;
   position: relative;
-  top: 50rpx;
+  top: 20rpx;
   left: 150rpx;
   width: 375rpx;
   font-size: 50rpx;
@@ -12,7 +12,7 @@
 .tab.active {
   float: left;
   position: relative;
-  top: 50rpx;
+  top: 20rpx;
   left: 150rpx;
   width: 375rpx;
   font-size: 55rpx;
@@ -83,3 +83,5 @@
     width: 100%;
     height: 5rpx;
    }
+
+   

@@ -6,19 +6,19 @@
     <view class="swiper">
         <swiper current="{{currentSwiper}}" bindchange="switchSwiper" class="swiper_item">
             <swiper-item>
-                <scroll-view scroll-y="true" style="height: 1200rpx;">
+                <scroll-view scroll-y="true" style="height: 1160rpx;">
                     <view wx:for="{{data}}" wx:for-item="data_item" wx:key="">
                         
 
                         <mp-cells ext-class="my-cells" title="您的申请">
                             <mp-cell value="校区" footer="{{campus[data_item['campus_name']]}}"></mp-cell>
                             <mp-cell value="预约日期" footer="{{data_item['date']}}"></mp-cell>
-                            <mp-cell value="预约时间" ></mp-cell>
-                            <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
-                                <view wx:if="{{value==true}}">
-                                    <mp-cell  footer="{{key}}"></mp-cell>
+                            <mp-cell>
+                                <view>预约时间</view>
+                                <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value" wx:if="{{value==true}}"slot="footer">
+                                    {{key}}
                                 </view>
-                            </view>
+                            </mp-cell>
                             <view wx:if="{{data_item['status']==0}}">
                                 <mp-cell value="审核状态" footer="审核中"></mp-cell>
                             </view>
@@ -36,17 +36,17 @@
             </swiper-item>
 
             <swiper-item>
-                <scroll-view scroll-y="true" style="height: 1200rpx;">
+                <scroll-view scroll-y="true" style="height: 1160rpx;">
                     <view wx:for="{{data2}}" wx:for-item="data_item" wx:for-index="index">
                         <mp-cells ext-class="my-cells" title="新申请">
                             <mp-cell value="校区" footer="{{campus[data_item['campus_name']]}}"></mp-cell>
                             <mp-cell value="预约日期" footer="{{data_item['date']}}"></mp-cell>
-                            <mp-cell value="预约时间"></mp-cell>
-                            <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
-                                <view wx:if="{{value==true}}"class="t0">
-                                    <mp-cell footer="{{key}}"></mp-cell>
+                            <mp-cell>
+                                <view>预约时间</view>
+                                <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value" wx:if="{{value==true}}"slot="footer">
+                                    {{key}}
                                 </view>
-                            </view>
+                            </mp-cell>
                             <mp-cell value="预约人" footer="{{data_item['user_info']['name']}}"></mp-cell>
                             <mp-cell value="学号" footer="{{data_item['user_info']['id']}}"></mp-cell>
                             <view wx:if="{{data_item['unit']}}">
@@ -68,10 +68,9 @@
                         </mp-cells>
                         
                     <button type="primary" bindtap="clickBtn_agree" id="{{index}}" size="large">同意</button>
-                    <button type="warn" bindtap="clickBtn_refuse" id="{{index}}" size="large">拒绝</button>
+                    <button type="warn" bindtap="clickBtn_refuse"style="background-color:red;color:white" id="{{index}}" size="large">拒绝</button>
                       
                     </view>
-                    <text>\n\n\n\n</text>
                     
                 </scroll-view>      
             </swiper-item>      
@@ -80,20 +79,21 @@
         
     </view>
     
+    
 </view>
 <view wx:else>
-    <scroll-view scroll-y="true" style="height: 1200rpx;">
+    <scroll-view scroll-y="true" style="height: 1300rpx;">
         <view wx:for="{{data}}" wx:for-item="data_item">
             
             <mp-cells ext-class="my-cells" title="您的申请">
                             <mp-cell value="校区" footer="{{campus[data_item['campus_name']]}}"></mp-cell>
                             <mp-cell value="预约日期" footer="{{data_item['date']}}"></mp-cell>
-                            <mp-cell value="预约时间" ></mp-cell>
-                            <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value">
-                                <view wx:if="{{value==true}}">
-                                    <mp-cell  footer="{{key}}"></mp-cell>
+                            <mp-cell>
+                                <view>预约时间</view>
+                                <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value" wx:if="{{value==true}}"slot="footer">
+                                    {{key}}
                                 </view>
-                            </view>
+                            </mp-cell>
                             <view wx:if="{{data_item['status']==0}}">
                                 <mp-cell value="审核状态" footer="审核中"></mp-cell>
                             </view>
@@ -110,4 +110,5 @@
     </scroll-view>
     
 </view>
+
 

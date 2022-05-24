@@ -48,8 +48,17 @@
 }
 
 .input1 {
-  margin:  auto 10px;
   margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.input2
+{
+  text-align:center;
+  align-items:center;
+  justify-content: center;
+  margin: auto; 
 }
 
 
