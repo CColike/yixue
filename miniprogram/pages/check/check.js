@@ -10,6 +10,7 @@ Page({
     this.setData({
       height: wx.getSystemInfoSync().windowHeight-56+'px',
       height2:wx.getSystemInfoSync().windowHeight+'px',
+      weight:wx.getSystemInfoSync().windowWidth/2+'px'
     })
     
  
