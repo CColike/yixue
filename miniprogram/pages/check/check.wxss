@@ -83,5 +83,16 @@
     width: 100%;
     height: 5rpx;
    }
+button{
 
+    display:inline-block;
+
+}
+.btn{
+    background-color: white ;
+}
    
+.btn::after{
+  border-radius: 0;
+  border:1ch;
+}

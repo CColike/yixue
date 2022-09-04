@@ -61,16 +61,19 @@
                                 <mp-cell value="审核状态" footer="审核中"></mp-cell>
                             </view>
                             <view wx:elif="{{data_item['status']==1}}">
-                                <mp-cell value="审核状态" footer="审核通过"></mp-cell>
+                                <mp-cell value="审核状态" footer="审核通过" ></mp-cell>
                             </view>
                             <view wx:else="{{data_item['status']==2}}">
                                 <mp-cell value="审核状态" footer="未通过审核"></mp-cell>
                             </view>
                         </mp-cells>
                         
-                    <button type="primary" bindtap="clickBtn_agree" id="{{index}}" size="large">同意</button>
-                    <button type="warn" bindtap="clickBtn_refuse"style="background-color:red;color:white" id="{{index}}" size="large">拒绝</button>
-                      
+                    <button class='btn'type="primary" bindtap="clickBtn_agree" style="width: {{weight}};background-color:white;color:green;height: 11vh;"id="{{index}}" >同意</button>
+                    <button class='btn' type="warn"bindtap="clickBtn_refuse"style="background-color:white;color:red;width: {{weight}};height: 11vh;" id="{{index}}">拒绝</button>  
+
+                    <!-- <button class='btn'type="primary" bindtap="clickBtn_agree" style="width: {{weight}};background-color:green;color:white;height: 11vh;"id="{{index}}" >同意</button>
+                    <button class='btn' type="warn"bindtap="clickBtn_refuse"style="background-color:red;color:white;width: {{weight}};height: 11vh;" id="{{index}}">拒绝</button>   -->
+
                     </view>
                     
                 </scroll-view>      
