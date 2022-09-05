@@ -99,26 +99,54 @@ Page({
     var that = this;
     var id = this.data.data2[e.target.id]['_id'];
     var sta = 'data2[' + e.target.id + '].status';
-    wx.cloud.callFunction({
-      name: 'set_check',
-      data: {
-        id: id,
-        status: 'agree'
-      },
-    })
-    .then(res => {
-      that.setData({
-        [sta]: 1
-      });
-      var period = JSON.stringify(this.data.data2[e.target.id]['period']);
-      wx.cloud.callFunction({
-        name: 'seter',
-        data: {
-          campus: this.data.data2[e.target.id]['campus_name'],
-          date: this.data.data2[e.target.id]['date'],
-          period: period
-        },
-      })
+
+    var campus_name = this.data.data2[e.target.id]['campus_name'];
+    var date = this.data.data2[e.target.id]['date'];
+    var period = this.data.data2[e.target.id]['period'];
+
+    const db = wx.cloud.database();
+    var conflict = false; // 是否冲突
+    db.collection(campus_name).doc(date).get().then(res => {
+        var info = res.data; //  某天的预约信息
+        // 判断此时审批通过是否与数据库中的预约情况存在冲突
+        for(var i in period){
+          if(period[i]==true && info[i]==1){
+            conflict = true; // 同时是预约的时间段，且数据库中该时段已经被审批通过，此时再审批通过就冲突了
+          }
+        }
+        if(conflict){
+            // 冲突，则在前端显示一个提示信息，并终止同意操作(这种情况下不允许修改)
+            // @CColike 在此处修改
+
+
+
+
+
+        }
+        else{
+            // 不冲突，则按照原先的代码进行，首先将check数据库中的信息更改，然后修改前端的数据，最后通过seter修改对应校区数据库的信息
+            wx.cloud.callFunction({
+                name: 'set_check',
+                data: {
+                  id: id,
+                  status: 'agree'
+                },
+              })
+              .then(res => {
+                that.setData({
+                  [sta]: 1
+                });
+                var period = JSON.stringify(this.data.data2[e.target.id]['period']);
+                wx.cloud.callFunction({
+                  name: 'seter',
+                  data: {
+                    campus: this.data.data2[e.target.id]['campus_name'],
+                    date: this.data.data2[e.target.id]['date'],
+                    period: period
+                  },
+                })
+              })
+        }
     })
   },
   clickBtn_refuse: function(e) {
