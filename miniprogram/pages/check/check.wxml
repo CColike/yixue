@@ -7,7 +7,7 @@
     <view class="swiper">
         <swiper current="{{currentSwiper}}" bindchange="switchSwiper" class="swiper_item">
             <swiper-item>
-                <scroll-view scroll-y="true" style="height:{{height}}">
+                <scroll-view scroll-y="true" style="height:{{wantheight}}">
                     <view wx:for="{{data}}" wx:for-item="data_item" wx:key="">
                         
 
@@ -37,7 +37,7 @@
             </swiper-item>
 
             <swiper-item>
-                <scroll-view scroll-y="true" style="height: {{height}};">
+                <scroll-view scroll-y="true" style="height: {{wantheight}};">
                     <view wx:for="{{data2}}" wx:for-item="data_item" wx:for-index="index">
                         <mp-cells ext-class="my-cells" title="新申请">
                             <mp-cell value="校区" footer="{{campus[data_item['campus_name']]}}"></mp-cell>
@@ -46,6 +46,7 @@
                                 <view>预约时间</view>
                                 <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value" wx:if="{{value==true}}"slot="footer">
                                     {{key}}
+                                    <!-- {{wantheight}} -->
                                 </view>
                             </mp-cell>
                             <mp-cell value="预约人" footer="{{data_item['user_info']['name']}}"></mp-cell>
@@ -68,8 +69,8 @@
                             </view>
                         </mp-cells>
                         
-                    <button class='btn'type="primary" bindtap="clickBtn_agree" style="width: {{weight}};background-color:white;color:green;height: 11vh;"id="{{index}}" >同意</button>
-                    <button class='btn' type="warn"bindtap="clickBtn_refuse"style="background-color:white;color:red;width: {{weight}};height: 11vh;" id="{{index}}">拒绝</button>  
+                    <button class='btn'type="primary" bindtap="clickBtn_agree" style="width: {{weight}};background-color:white;color:green;"id="{{index}}" >同意</button>
+                    <button class='btn' type="warn"bindtap="clickBtn_refuse"style="background-color:white;color:red;width: {{weight}};" id="{{index}}">拒绝</button>  
 
                     <!-- <button class='btn'type="primary" bindtap="clickBtn_agree" style="width: {{weight}};background-color:green;color:white;height: 11vh;"id="{{index}}" >同意</button>
                     <button class='btn' type="warn"bindtap="clickBtn_refuse"style="background-color:red;color:white;width: {{weight}};height: 11vh;" id="{{index}}">拒绝</button>   -->
@@ -86,7 +87,7 @@
     
 </view>
 <view wx:else>
-    <scroll-view scroll-y="true" style="height: {{height2}};">
+    <scroll-view scroll-y="true" style="height: {{userheight}};">
         <view wx:for="{{data}}" wx:for-item="data_item">
             
             <mp-cells ext-class="my-cells" title="您的申请">
@@ -96,6 +97,7 @@
                                 <view>预约时间</view>
                                 <view wx:for="{{data_item['period']}}" wx:for-index="key" wx:for-item="value" wx:if="{{value==true}}"slot="footer">
                                     {{key}}
+                                  <!-- {{userheight}} -->
                                 </view>
                             </mp-cell>
                             <view wx:if="{{data_item['status']==0}}">
