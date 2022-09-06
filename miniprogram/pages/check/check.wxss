@@ -15,7 +15,7 @@
   top: 20rpx;
   left: 150rpx;
   width: 375rpx;
-  font-size: 55rpx;
+  font-size: 50rpx;
   font-weight: bold;
   height: 100rpx; 
 }

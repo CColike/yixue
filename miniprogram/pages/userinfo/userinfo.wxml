@@ -1,25 +1,9 @@
-<view class="view-contain-ti">
-    <text class="text-ti">用户类型</text>
-    <text class="input1">{{user}}</text>
-</view>
-
-<view class="view-contain-ti">
-    <text class="text-ti">姓名</text>
-    <text class="input1">{{name}}</text>
-</view>
-
-<view class="view-contain-ti">
-    <text class="text-ti">身份</text>
-    <text class="input1">{{identify}}</text>
-</view>
-
-<view class="view-contain-ti">
-    <text class="text-ti">学/工号</text>
-    <text class="input1">{{id}}</text>
-</view>
-<view class="view-contain-ti">
-    <text class="text-ti">联系方式</text>
-    <text class="input1">{{phone}}</text>
-</view>
 
 
+<mp-cells ext-class="my-cells" title="您的信息">
+    <mp-cell value="用户类型" footer="{{user}}"></mp-cell>
+    <mp-cell value="姓名" footer="{{name}}"></mp-cell>
+    <mp-cell value="身份" footer="{{identify}}"></mp-cell>
+    <mp-cell value="学/工号" footer="{{id}}"></mp-cell>
+    <mp-cell value="联系方式" footer="{{phone}}"></mp-cell>
+  </mp-cells>

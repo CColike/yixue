@@ -1,33 +1,38 @@
 <view>
-  <view class="view-contain-ti0">
-      <text class="text-ti0">预约校区</text>
-      <view class="input1">{{campus}}</view>
-  </view>
-  <view class="view-contain-ti0">
-      <text class="text-ti0">预约日期</text>
-      <view class="input1">{{date}}</view>
-  </view>
-  <text>　预约时间</text>
-  <view wx:for="{{period}}" wx:for-index="key" wx:for-item="value"class="input1">
-      <view wx:if="{{value==true}}"class="input1">
-      {{key+""}}
+  <mp-cells ext-class="my-cells" title="您的申请">
+    <mp-cell value="预约校区" footer="{{campus}}"></mp-cell>
+    <mp-cell value="预约日期" footer="{{date}}"></mp-cell>
+    <mp-cell>
+      <view>预约时间</view>
+      <view wx:for="{{period}}" wx:for-index="key" wx:for-item="value"class="input1" wx:if="{{value==true}}"slot="footer">
+          {{key}}
       </view>
-  </view>
+    </mp-cell>
+
+    <mp-cell>
+      <view>预约人</view>                         
+      <input class="input1" placeholder="在这里输入" bindinput="person" value="{{user_name}}"slot="footer"></input>
+    </mp-cell>
+
+    <mp-cell>
+      <view>借用单位</view>                         
+      <input class="input1" placeholder="在这里输入" bindinput="unit"slot="footer"></input>
+    </mp-cell>
+
+    <mp-cell>
+      <view>电话</view>                         
+      <input class="input1" placeholder="在这里输入" bindinput="call" value="{{user_phone}}"slot="footer"></input>
+    </mp-cell>
+
+  </mp-cells>
+
+
 </view>
-<text>\n</text>
-<view class="view-contain-ti">
-    <text class="text-ti0">预约人</text>
-    <input class="input2" placeholder="在这里输入" bindinput="person" value="{{user_name}}"></input>
-</view>
-<view class="view-contain-ti">
-    <text class="text-ti0">借用单位</text>
-    <input class="input2" placeholder="在这里输入" bindinput="unit"></input>
-</view>
-<view class="view-contain-ti">
-    <text class="text-ti0">电话</text>
-    <input class="input2" placeholder="在这里输入" bindinput="call" value="{{user_phone}}"></input>
-</view>
-  <view class="flex-center-in-row">请确认您的申请时间并填写相关信息</view>
+
 <view class="btn">
-  <button type="primary" bindtap="clickBtn">我要预约</button>
+  <button type="primary" bindtap="clickBtn" >我要预约</button>
 </view>
+
+<!-- <view class="s_view">
+  <button type="primary" bindtap="clickBtn" class="saveBtn">我要预约</button>
+</view> -->
