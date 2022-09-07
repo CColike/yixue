@@ -43,3 +43,11 @@ justify-content:center;
  .text-admini{
    font-size: large;
  }
+
+ .cover-box{
+  position: fixed;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://7969-yixue-cloud-1gqixcsac9ea419e-1308568334.tcb.qcloud.la/bg.jpg?sign=173a89ea17cc739d544f4c7e80a28758&t=1662543369);
+}

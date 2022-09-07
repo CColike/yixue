@@ -1,5 +1,5 @@
 
-
+<view class="cover-box">
 <mp-cells ext-class="my-cells" title="您的信息">
     <mp-cell value="用户类型" footer="{{user}}"></mp-cell>
     <mp-cell value="姓名" footer="{{name}}"></mp-cell>
@@ -7,3 +7,4 @@
     <mp-cell value="学/工号" footer="{{id}}"></mp-cell>
     <mp-cell value="联系方式" footer="{{phone}}"></mp-cell>
   </mp-cells>
+</view>
